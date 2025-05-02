@@ -10,7 +10,7 @@ dotenv.config();
 
 app.use(cors(
     {
-        origin: 'https://online-learning-kohl.vercel.app/',
+        origin: 'https://online-learning-kohl.vercel.app',
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         credentials: true,
     }
