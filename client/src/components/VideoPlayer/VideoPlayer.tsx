@@ -45,7 +45,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, videoUrl }) => {
     debounce(async (intervals: WatchInterval[], currentTime: number, duration: number) => {
       try {
         if (!userId) return;
-        const response = await axios.post('http://localhost:8080/api/videos/progress/save', {
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/videos/progress/save`, {
           userId,
           videoId,
           watchedIntervals: intervals,
@@ -88,7 +88,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, videoUrl }) => {
       setLoadError(null);
 
       try {
-        const response = await axios.get(`http://localhost:8080/api/videos/progress/${videoId}`, {
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/videos/progress/${videoId}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         if (response.data) {
