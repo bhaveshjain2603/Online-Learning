@@ -33,7 +33,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoId, videoUrl }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [resumeTime, setResumeTime] = useState<number | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
-  const [autoResuming, setAutoResuming] = useState(false);
+  const [, setAutoResuming] = useState(false);
   const MINIMUM_WATCH_DURATION = 1;
   const navigate = useNavigate();
 
