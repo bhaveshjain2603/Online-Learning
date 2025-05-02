@@ -30,7 +30,7 @@ const SignupForm: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:8080/api/auth/signup', { 
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`, { 
         name, 
         email, 
         password 
